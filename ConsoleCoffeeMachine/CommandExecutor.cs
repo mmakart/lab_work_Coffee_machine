@@ -16,9 +16,9 @@ namespace ConsoleCoffeeMachine
 
             switch (commandParts[0])
             {
-                if (commandParts.Length != 3)
-                    throw new Exception("Wrong operation. Using: load (coffee|water|milk) <number>");
                 case "load":
+                    if (commandParts.Length != 3)
+                        throw new Exception("Wrong operation. Using: load (coffee|water|milk) <number>");
                     var toLoad = int.Parse(commandParts[2]);
                     switch (commandParts[1])
                     {
