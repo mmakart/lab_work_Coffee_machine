@@ -11,8 +11,6 @@ namespace ConsoleCoffeeMachine
             argumentString = argumentString.ToLower();
             
             string[] commandParts = argumentString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            // Console.WriteLine("[" + string.Join(", ", s_arr) + "]");
-
 
             switch (commandParts[0])
             {
