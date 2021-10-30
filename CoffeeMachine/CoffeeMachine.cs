@@ -68,13 +68,21 @@ namespace CoffeeMachine
 
             OutputProvider.SendMessage("Hello. It's a coffee machine.");
 
-            Grinder.GrindCoffee(CoffeeContainer);
-            Brewer.BoilWater(WaterContainer);
-            Brewer.BoilMilk(MilkContainer);
-
-            CoffeeContainer.GetResource(coffeeAmount);
-            WaterContainer.GetResource(waterAmount);
-            MilkContainer.GetResource(milkAmount);
+            if (coffeeAmount > 0)
+            {
+                Grinder.GrindCoffee(CoffeeContainer);
+                CoffeeContainer.GetResource(coffeeAmount);
+            }
+            if (waterAmount > 0)
+            {
+                Brewer.BoilWater(WaterContainer);
+                WaterContainer.GetResource(waterAmount);
+            }
+            if (milkAmount > 0)
+            {
+                Brewer.BoilMilk(MilkContainer);
+                MilkContainer.GetResource(milkAmount);
+            }
 
             OnBrew?.Invoke(this, EventArgs.Empty);
 
