@@ -37,7 +37,7 @@ namespace ConsoleCoffeeMachine
                     break;
                 case "brew":
                     if (commandParts.Length != 2)
-                        throw new Exception("Wrong operation. Using: brew (cappucino|espresso|filtered)");
+                        throw new Exception("Wrong operation. Using: brew (cappucino|espresso|filtered|americano)");
                     switch (commandParts[1])
                     {
                         case "cappucino":
@@ -49,12 +49,15 @@ namespace ConsoleCoffeeMachine
                         case "filtered":
                             coffee = cm.Brew(Recipes.FILTERED);
                             break;
+                        case "americano":
+                            coffee = cm.Brew(Recipes.AMERICANO);
+                            break;
                         default:
                             throw new Exception("I don't know this recipe. No operation happened.");
                     }
                     break;
                 default:
-                    throw new Exception("Unknown operation. Using: ( load (coffee|water|milk) <number> | brew (cappucino|espresso|filtered) )");
+                    throw new Exception("Unknown operation. Using: ( load (coffee|water|milk) <number> | brew (cappucino|espresso|filtered|americano) )");
             }
         }
     }

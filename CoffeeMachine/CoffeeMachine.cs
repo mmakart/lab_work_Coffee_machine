@@ -22,7 +22,8 @@ namespace CoffeeMachine
         private readonly Dictionary<Recipes, Recipe> recipes = new Dictionary<Recipes, Recipe>() {
             { Recipes.ESPRESSO, new Recipe(1, 2, 3) },
             { Recipes.FILTERED, new Recipe(11, 22, 33) },
-            { Recipes.CAPPUCINO, new Recipe(111, 222, 333) }
+            { Recipes.CAPPUCINO, new Recipe(111, 222, 333) },
+            { Recipes.AMERICANO, new Recipe(111, 222, 0) }
         };
         private IOutputProvider OutputProvider { get; }
         public void LoadCoffee(int amount)
